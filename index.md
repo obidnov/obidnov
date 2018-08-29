@@ -1,7 +1,7 @@
 ---
 boomstreamId: lZuIJeum
 ---
-@import "assets/css/video-embed.css";
+@import "https://obidnov.ru/assets/css/video-embed.css";
 
 ### Obidnov Alexander
 
