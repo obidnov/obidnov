@@ -1,6 +1,7 @@
 ---
 boomstreamId: lZuIJeum
 ---
+@import "{{ site.theme }}";
 
 ### Obidnov Alexander
 
