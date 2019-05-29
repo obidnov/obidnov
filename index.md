@@ -9,4 +9,4 @@ boomstreamId: lZuIJeum
 
 ![My photo](https://obidnov.ru/obidnov.jpg)
 
-{% include boomstreamPlayer.html id=page.boomstreamId %}
+{% include boomstreamPlayerInline.html id=page.boomstreamId %}
