@@ -4,42 +4,55 @@
         <meta charset="UTF-8">
         <title>Example of inline player</title>
         <script src="https://play.skillbox.ru/assets/javascripts/inline.js" type="application/javascript"></script>
+        <!--script src="https://play.boomstream.com/assets/javascripts/inline.js" type="application/javascript"></script-->
     </head>
     <body>
         <div style="width: 50%;height: 300px;">
             <div id="someDiv"></div>
         </div>
         <script>
-            var bPlayerClass = new bPlayer();
-            var b = bPlayerClass.load({el: '#someDiv', code: 'VCcNtuiw'});
-            b.then((instance) => {
-                instance.onPlay = function (code){
+
+            var callbacks = {
+                onPlay: (code) => {
                     console.log('onPlay', code);
-                }
-                instance.onStop = function (code){
-                    console.log('onStop', code);
-                }
-                instance.onPause = function (code){
+                },
+                onEnded: (code) => {
+                    console.log('onEnded', code);
+                },
+                onPause: (code) => {
                     console.log('onPause', code);
-                }
-                instance.onTime = function (code, time){
+                },
+                onTime: (code, time) => {
                     console.log('onTime', code, time);
-                }
-                instance.onSeeked = function (code, time){
+                },
+                onSeeked: (code, time) => {
                     console.log('onSeeked', code, time);
-                }
-                instance.onSeeking = function (code, time){
+                },
+                onSeeking: (code, time) => {
                     console.log('onSeeking', code, time);
-                }
-                instance.onError = function (code, time){
+                },
+                onError: (code, time) => {
                     console.log('onError', code, time);
                 }
+            }
+
+            var bPlayerClass = new bPlayer({el: '#someDiv', callbacks: callbacks});
+
+            bPlayerClass.load('VCcNtuiw').then((instance) => {
+                console.log(instance.$el);
             });
             function next() {
-                b = bPlayerClass.load({el: '#someDiv', code: 'fa11f2il'});
+                bPlayerClass.load('fa11f2il').then((instance) => {
+                    //instance.play();
+                    //instance.pause();
+                    instance.useLastTime();
+                });
             }
         </script>
         <hr>
         <button onclick="next()">Next video</button>
+        <button onclick="bPlayerClass.pause()">Pause</button>
+        <button onclick="bPlayerClass.play()">Play</button>
+        <button onclick="bPlayerClass.seek(50)">Seek to 50%</button>
     </body>
 </html>
