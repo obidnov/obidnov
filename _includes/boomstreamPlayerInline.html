@@ -1,29 +1,5 @@
 <script src="https://play.boomstream.com/assets/javascripts/inline.js" type="application/javascript"></script>
 <script>
-        var bPlayerClass = new bPlayer();
-        b = bPlayerClass.load({el: '#boomstream', code: '{{ include.id }}'});
-        b.then((instance) => {
-            instance.onPlay = function (code){
-                console.log('onPlay', code);
-            }
-            instance.onStop = function (code){
-                console.log('onStop', code);
-            }
-            instance.onPause = function (code){
-                console.log('onPause', code);
-            }
-            instance.onTime = function (code, time){
-                console.log('onTime', code, time);
-            }
-            instance.onSeeked = function (code, time){
-                console.log('onSeeked', code, time);
-            }
-            instance.onSeeking = function (code, time){
-                console.log('onSeeking', code, time);
-            }
-            instance.onError = function (code, time){
-                console.log('onError', code, time);
-            }
-        });
-    </script>
+    new bPlayer({el: '#boomstream'}).load('{{ include.id }}');
+</script>
 <div id="boomstream"></div>
