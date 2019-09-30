@@ -14,7 +14,7 @@ boomstreamId: lZuIJeum
 </p>
 
 <p>
-<div class="embed-container" style="border: 1px #fff solid; padding-bottom: 42.25%;">
+<div class="embed-container" style="border: 1px dashed #b5e853; padding-bottom: 42.25%;">
    <iframe width="100%" src="https://mars.nasa.gov/layout/embed/send-your-name/mars2020/certificate/?cn=279986465455" frameborder="0"></iframe>
 </div>
 </p>
