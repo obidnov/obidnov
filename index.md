@@ -10,3 +10,5 @@ boomstreamId: lZuIJeum
 ![My photo](https://obidnov.ru/obidnov.jpg)
 
 {% include boomstreamPlayerInline.html id=page.boomstreamId %}
+
+<iframe class="embed-container" width="100%" height="410" src="https://mars.nasa.gov/layout/embed/send-your-name/mars2020/certificate/?cn=279986465455" frameborder="0"></iframe>
