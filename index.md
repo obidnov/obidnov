@@ -1,6 +1,7 @@
 ---
 boomstreamId: lZuIJeum
 ---
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <link rel="stylesheet" href="https://obidnov.ru/assets/css/video-embed.css">
 
 ### Obidnov Alexander
