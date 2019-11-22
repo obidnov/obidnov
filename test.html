@@ -20,7 +20,7 @@
 <script type="application/ld+json">
 {"@type":"WebSite","url":"https://obidnov.ru/","name":"Obidnov Alexander","headline":"Obidnov Alexander","description":"I’m CEO @ Boomstream","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-
+<script src="https://play.boomstream.com/assets/javascripts/biframesdk.js"></script>
   </head>
 
   <body>
@@ -48,6 +48,19 @@
 <p><img src="https://obidnov.ru/obidnov.jpg" alt="My photo" /></p>
 
 <p>
+  <script>
+        let player = new bIframeSDK('VCcNtuiw');
+    </script>
+    <button onclick="player.play()">play</button>
+    <button onclick="player.pause()">pause</button>
+    <button onclick="player.seek(10)">seek to 10 sec</button>
+    <button onclick="player.mute()">mute</button>
+    <button onclick="player.unmute()">unmute</button>
+    <button onclick="player.volume(50)">volume to 50 %</button>
+    <button onclick="player.useLastTime()">useLastTime</button>
+    <button onclick="player.previous()">previous</button>
+    <button onclick="player.next()">next</button>
+    <button onclick="player.fullScreen()">fullScreen</button>
 <iframe src="https://play.boomstream.com/VCcNtuiw?title=0" width="100%" height="355" frameborder="0" scrolling="no" allowfullscreen></iframe>
 </p>
 
