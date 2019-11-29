@@ -117,11 +117,17 @@
           }
 
           _post(action, params) {
+              let frame = document.getElementById('boomstream_iframe');
+            
               let data = {code: this._instance, method: 'action', action: action, data: params};
               var frames = window.frames;
               for (var i = 0; i < frames.length; i++) {
+                  frame.contentWindow.postMessage(data, 'https://play.obidnov.ru/VCcNtuiw?title=0');
+                  frame.contentWindow.postMessage(data, 'https://play.obidnov.ru/VCcNtuiw');
+                  frame.contentWindow.postMessage(data, 'https://play.obidnov.ru');
+                  frame.contentWindow.postMessage(data, '*');
                   //if (-1 != frames[i].src.search(data.code)) {
-                      frames[i].contentWindow.postMessage(data, frames[i].src);
+                  //    frames[i].contentWindow.postMessage(data, frames[i].src);
                   //}
               }
           }
