@@ -122,9 +122,6 @@
               let data = {code: this._instance, method: 'action', action: action, data: params};
               var frames = window.frames;
               for (var i = 0; i < frames.length; i++) {
-                  frame.contentWindow.postMessage(data, 'https://play.obidnov.ru/VCcNtuiw?title=0');
-                  frame.contentWindow.postMessage(data, 'https://play.obidnov.ru/VCcNtuiw');
-                  frame.contentWindow.postMessage(data, 'https://play.obidnov.ru');
                   frame.contentWindow.postMessage(data, '*');
                   //if (-1 != frames[i].src.search(data.code)) {
                   //    frames[i].contentWindow.postMessage(data, frames[i].src);
@@ -146,7 +143,7 @@
     <button onclick="player.previous()">previous</button>
     <button onclick="player.next()">next</button>
     <button onclick="player.fullScreen()">fullScreen</button>
-    <iframe src="https://play.obidnov.ru/VCcNtuiw?title=0" width="100%" height="355" frameborder="0" scrolling="no" allowfullscreen name="target" id="boomstream_iframe"></iframe>
+    <iframe src="https://play.obidnov.ru/VCcNtuiw?title=0" width="100%" height="355" frameborder="0" scrolling="no" allow="autoplay; fullscreen" allowfullscreen name="target" id="boomstream_iframe"></iframe>
 </p>
 
 <p>
