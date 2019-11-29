@@ -120,8 +120,8 @@
               let data = {code: this._instance, method: 'action', action: action, data: params};
               var frames = window.frames;
               for (var i = 0; i < frames.length; i++) {
-                  if (-1 != frames[i].document.location.href.search(data.code)) {
-                      frames[i].window.postMessage(data, frames[i].src);
+                  if (-1 != frames[i].src.search(data.code)) {
+                      frames[i].contentWindow.postMessage(data, frames[i].src);
                   }
               }
           }
