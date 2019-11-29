@@ -120,9 +120,9 @@
               let data = {code: this._instance, method: 'action', action: action, data: params};
               var frames = window.frames;
               for (var i = 0; i < frames.length; i++) {
-                  if (-1 != frames[i].src.search(data.code)) {
+                  //if (-1 != frames[i].src.search(data.code)) {
                       frames[i].contentWindow.postMessage(data, frames[i].src);
-                  }
+                  //}
               }
           }
       }
