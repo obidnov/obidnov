@@ -21,7 +21,7 @@
     {"@type":"WebSite","url":"https://obidnov.ru/","name":"Obidnov Alexander","headline":"Obidnov Alexander","description":"I’m CEO @ Boomstream","@context":"http://schema.org"}</script>
     <!-- End Jekyll SEO tag -->
 
-    <script src="https://play.obidnov.ru/assets/javascripts/biframesdk.js"></script>
+    <!--script src="https://play.obidnov.ru/assets/javascripts/biframesdk.js"></script-->
   </head>
 
   <body>
@@ -50,6 +50,84 @@
 
 <p>
     <script>
+      window.bIframeSDK = class Boomstream {
+
+          constructor(data) {
+              this._instance = data;
+          }
+
+          play() {
+              if (this._instance != null) {
+                  this._post('play');
+              }
+          }
+
+          seek(time) {
+              if (this._instance != null && time != undefined && time != null) {
+                  this._post('seek', time);
+              }
+          }
+
+          pause() {
+              if (this._instance != null) {
+                  this._post('pause');
+              }
+          }
+
+          useLastTime() {
+              if (this._instance != null) {
+                  this._post('useLastTime');
+              }
+          }
+
+          mute() {
+              if (this._instance != null) {
+                  this._post('mute');
+              }
+          }
+
+          unmute() {
+              if (this._instance != null) {
+                  this._post('unmute');
+              }
+          }
+
+          volume(vol) {
+              if (this._instance != null && vol != undefined && vol != null) {
+                  this._post('volume', vol);
+              }
+          }
+
+          fullScreen() {
+              if (this._instance != null) {
+                  this._post('fullScreen');
+              }
+          }
+
+          next() {
+              if (this._instance != null) {
+                  this._post('next');
+              }
+          }
+
+          previous() {
+              if (this._instance != null) {
+                  this._post('previous');
+              }
+          }
+
+          _post(action, params) {
+              let data = {code: this._instance, method: 'action', action: action, data: params};
+              var frames = window.frames;
+              for (var i = 0; i < frames.length; i++) {
+                  if (-1 != frames[i].document.location.href.search(data.code)) {
+                      frames[i].window.postMessage(data, frames[i].src);
+                  }
+              }
+          }
+      }
+
+  
         let player = new bIframeSDK('VCcNtuiw');
     </script>
     <button onclick="player.play()">play</button>
