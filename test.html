@@ -119,7 +119,7 @@
           _post(action, params) {  
               let data = {code: this._instance, method: 'action', action: action, data: params};
               document.querySelectorAll('iframe').forEach( item =>
-                  item.contentWindow.postMessage(data, item.src);
+                  item.contentWindow.postMessage(data, item.src)
               )
           }
       }
